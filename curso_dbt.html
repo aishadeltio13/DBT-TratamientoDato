@@ -3053,7 +3053,13 @@ vertical-align: -.125em;
 <h2 data-number="10" class="anchored" data-anchor-id="macros-y-paquetes-en-dbt"><span class="header-section-number">10</span> Macros y Paquetes en dbt</h2>
 <section id="qué-son-las-macros" class="level3" data-number="10.1">
 <h3 data-number="10.1" class="anchored" data-anchor-id="qué-son-las-macros"><span class="header-section-number">10.1</span> ¿Qué son las Macros?</h3>
-<p>Las <strong>macros</strong> son funciones reutilizables escritas en <strong>Jinja</strong> que te permiten: - ✅ Evitar código SQL repetitivo (DRY - Don’t Repeat Yourself) - ✅ Crear lógica compleja y reutilizable - ✅ Generar SQL dinámicamente - ✅ Compartir código entre modelos</p>
+<p>Las <strong>macros</strong> son funciones reutilizables escritas en <strong>Jinja</strong> que te permiten:</p>
+<ul>
+<li>✅ Evitar código SQL repetitivo (DRY - Don’t Repeat Yourself)</li>
+<li>✅ Crear lógica compleja y reutilizable</li>
+<li>✅ Generar SQL dinámicamente</li>
+<li>✅ Compartir código entre modelos</li>
+</ul>
 <p>Las macros son como funciones en programación, pero para SQL.</p>
 <hr>
 </section>
@@ -3316,13 +3322,9 @@ vertical-align: -.125em;
 <span id="cb76-21"><a href="#cb76-21" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">tests</span><span class="kw">:</span></span>
 <span id="cb76-22"><a href="#cb76-22" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> unique</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
-</section>
-<section id="ventajas-de-la-generación-automática" class="level4">
-<h4 class="anchored" data-anchor-id="ventajas-de-la-generación-automática">Ventajas de la Generación Automática</h4>
+<p><strong>Ventajas de la Generación Automática</strong></p>
 <p>✅ <strong>Ahorro de tiempo</strong>: No escribir manualmente cada columna ✅ <strong>Cero errores de tipeo</strong>: Los nombres se extraen directamente del warehouse ✅ <strong>Completitud</strong>: No olvidarás documentar ninguna columna ✅ <strong>Punto de partida</strong>: Estructura base lista para agregar descripciones ✅ <strong>Escalabilidad</strong>: Puedes generar YAML para decenas de modelos rápidamente</p>
-</section>
-<section id="limitaciones" class="level4">
-<h4 class="anchored" data-anchor-id="limitaciones">Limitaciones</h4>
+<p><strong>Limitaciones</strong></p>
 <p>⚠️ <strong>No genera descripciones</strong>: Las descripciones quedan vacías, debes completarlas manualmente ⚠️ <strong>No añade tests</strong>: Debes agregar los tests según tus necesidades ⚠️ <strong>Sobrescribe</strong>: Ten cuidado de no sobrescribir YAML existente con documentación</p>
 <hr>
 </section>
