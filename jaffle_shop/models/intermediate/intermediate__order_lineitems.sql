@@ -46,3 +46,16 @@ group by
     order_lineitems.order_id,
     order_lineitems.product_id,
     products.product_type
+
+
+
+-- Estás cogiendo tablas limpias (orders, lineitems, products) y mezclándolas para crear una "Súper Tabla" que tenga toda la información junta.
+-- Usas ref() para llamar a tus tablas de staging. Esto construye el Linaje (Lineage) de dbt. Si staging cambia, este modelo se enterará.
+
+-- La Lógica del JOIN (La "Súper Tabla")
+    -- Estás haciendo un cruce a tres bandas:
+    -- Tomas los ítems (detalle).
+    -- Le pegas la información del pedido (fecha, cliente, tienda) -> INNER JOIN orders.
+    -- Le pegas la información del producto (tipo, categoría) -> INNER JOIN products.
+        -- El Resultado: Cada fila de esta tabla te dice: "El Cliente X compró el Producto Y en la fecha Z, costó tanto y fue (o no) una devolución".
+

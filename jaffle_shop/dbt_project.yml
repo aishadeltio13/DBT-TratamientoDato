@@ -1,26 +1,32 @@
+# Nombre interno del proyecto
 name: jaffle_shop
 
+# Busca en el archivo profiles.yml 
+# una configuración de conexión que se llame exactamente 'jaffle_shop' y úsala para conectarte a la base de datos
 profile: jaffle_shop
 
+# Estas líneas  le dicen a dbt dónde buscar las carpetas
 seed-paths: ["seeds"]
 model-paths: ["models"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 test-paths: ["tests"]
 
+# Donde guarda los archivos temporales, traduccion de sql.
 target-path: "target"
+
+#  Configura el comando de limpieza: dbt clean.
 clean-targets:
-  - "target"
-  - "dbt_packages"
+  - "target"              # 1. Borra los archivos compilados
+  - "dbt_packages"        # 2. Borra las librerías externas descargadas
 
 models:
-  jaffle_shop:
-    # Materialize staging models as views, and marts as tables
-    staging:
+  jaffle_shop: # 1. Aplica a todo el proyecto
+    staging:   # 2. Aplica solo a la carpeta models/staging
       +materialized: view
       +tags: ["staging"]
     intermediate:
       +materialized: view
       +tags: ["intermediate"]
-    marts:
+    marts:    # 3. Aplica solo a la carpeta models/marts.
       +materialized: table

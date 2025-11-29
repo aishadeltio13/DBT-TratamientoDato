@@ -1,7 +1,9 @@
 packages:
   - package: dbt-labs/dbt_utils
-    version: [">=1.0.0", "<2.0.0"]
+    version: [">=1.0.0", "<2.0.0"]  # Instálame cualquier versión de dbt_utils siempre que sea mayor o igual a la 1.0.0 pero menor que la 2.0.0
   - package: godatadriven/dbt_date
     version: 0.16.1
   - package: dbt-labs/codegen
     version: 0.13.1
+
+# Como desarrollador, defines qué herramientas necesitas.

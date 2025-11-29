@@ -13,3 +13,6 @@ renamed as (
 )
 
 select * from renamed
+
+-- raw_costumers(ID, Name) lo cambiamos a (costumer_id, costumer_name)
+

@@ -16,3 +16,5 @@ renamed as (
 )
 
 select * from renamed
+
+-- raw_orders(ID,CUSTOMER,ORDERED_AT,STORE_ID) --> (order_id, location_id, costumer_id, order_date)

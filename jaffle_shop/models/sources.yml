@@ -1,12 +1,18 @@
 version: 2
 
 sources:
-  - name: raw
-    schema: raw
-    tables:
+  - name: raw                   # <-- Cómo llamarás a este grupo en Jinja: {{ source('raw', ...) }}
+    schema: raw                 # <-- El nombre REAL en tu base de datos (DuckDB)
+    tables:                     # <-- Las tablas permitidas
       - name: orders
       - name: customers
       - name: items
       - name: products
       - name: stores
       - name: supplies
+
+# declaración oficial que le dice a dbt: "Oye, reconozco que estas tablas existen en la base de datos y voy a empezar a usarlas en mi proyecto".
+# Con este archivo, dbt te permite usar una función especial llamada Jinja
+# SELECT * FROM {{ source('raw', 'customers') }}
+# Esto crea un vínculo dinámico. Si cambias la configuración en sources.yml, se actualiza en todo el proyecto automáticamente.
+

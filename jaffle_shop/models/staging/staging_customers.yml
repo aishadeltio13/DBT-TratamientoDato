@@ -30,3 +30,27 @@ models:
         tests:
           - unique
           - not_null
+
+# Este archivo staging__costumers.yml es tu Contrato de Calidad y Documentación.
+
+# Mientras que el archivo .sql define cómo se transforman los datos, este archivo .yml 
+# define qué esperas obtener y cómo asegurarte de que no se rompa nada.
+
+# Cada vez que ejecutes dbt test, dbt lanzará consultas a tu base de datos para verificar:
+# unique: ¿Hay algún ID repetido? Si sí, falla y te avisa.
+# not_null: ¿Hay algún ID vacío? Si sí, falla y te avisa.
+# Esto evita que datos basura lleguen a tus reportes finales.
+
+
+# ⚠️ ¡Alerta de Inconsistencia!
+# He detectado un problema importante al comparar este archivo con el SQL y el CSV que me pasaste antes:
+# Tu SQL (staging__customers.sql) generaba estas columnas:
+# customer_id
+# customer_name
+
+# Tu YAML (staging__customers.yml) espera estas columnas:
+# customer_id (Coincide ✅)
+# first_name (¡No existe en el SQL! ❌)
+# last_name (¡No existe en el SQL! ❌)
+# email (¡No existe en el SQL ni en el CSV! ❌)
+

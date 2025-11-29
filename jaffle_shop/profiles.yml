@@ -1,10 +1,10 @@
-jaffle_shop:
-  outputs:
+jaffle_shop:    # Esta es la configuración de conexión para el perfil llamado 'jaffle_shop'".
+  outputs:      # Lista de las conexiones posibles 
     dev:
-      type: duckdb
-      path: 'bbdd/jaffle_shop.duckdb'
-      threads: 4
-  target: dev
+      type: duckdb                    # Tipo de la base de datos
+      path: 'bbdd/jaffle_shop.duckdb' # La base de datos es un archivo físico guardado en esta ruta
+      threads: 4                      # 4 modelos (tablas) al mismo tiempo
+  target: dev                         # Por defecto, usa la configuración dev
 
 
   

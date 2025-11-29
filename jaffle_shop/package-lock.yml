@@ -9,3 +9,6 @@ packages:
     package: dbt-labs/codegen
     version: 0.13.1
 sha1_hash: eb651df737b3164524c43452554fe5f2d551373b
+
+# Tú no sueles escribirlo, dbt lo escribe por ti.
+# El ticket de compra con lo que realmente te llevaste, packages.yml es tu lista de la compra original.
