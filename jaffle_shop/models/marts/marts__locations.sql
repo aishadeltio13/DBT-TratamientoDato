@@ -7,3 +7,5 @@ locations as (
 )
 
 select * from locations
+
+-- Información sobre las tiendas.

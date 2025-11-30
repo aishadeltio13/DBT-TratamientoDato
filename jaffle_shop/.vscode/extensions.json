@@ -3,3 +3,7 @@
     "dbtLabsInc.dbt"
   ]
 }
+
+
+// Cuando tú (o un compañero tuyo) abrís este proyecto por primera vez en VS Code, el editor lee este archivo. 
+// Al ver esa línea, VS Code mostrará una notificación emergente diciendo: "Este proyecto recomienda instalar la extensión 'dbt Power User'".

@@ -31,3 +31,5 @@ group by
     customer_id,
     customer_name,
     order_id
+
+-- Es la tabla central de ventas. Cada fila es un ticket o pedido.

@@ -48,3 +48,5 @@ products_orders as (
 left join 
     products_orders 
 on products.product_id = products_orders.product_id
+
+-- Lista única de productos enriquecida (catálogo)

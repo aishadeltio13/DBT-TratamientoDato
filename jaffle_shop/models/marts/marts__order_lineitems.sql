@@ -48,3 +48,7 @@ on order_lineitems.customer_id = customers.customer_id
 left join 
     products
 on order_lineitems.product_id = products.product_id
+
+
+-- cada línea del ticket. Si marts__orders te dice "Vendí 50€", 
+-- esta tabla te dice "Fueron 2 sándwiches de 10€ y 3 bebidas de 10€".

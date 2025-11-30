@@ -19,3 +19,13 @@
 {% macro fabric__cents_to_dollars(column_name) %}
     cast({{ column_name }} / 100 as numeric(16,2))
 {% endmacro %}
+
+
+-- Este archivo define una función matemática para convertir centavos a dólares 
+-- (dividiendo por 100), pero su verdadera magia es que es polimórfica.
+--  Fíjate en el comando adapter.dispatch: lo que hace es detectar 
+--  automáticamente qué base de datos estás usando (Postgres, BigQuery, Fabric o DuckDB) 
+--  y elegir la fórmula SQL sintácticamente correcta para esa base de datos específica. 
+--  Gracias a esto, puedes escribir {{ cents_to_dollars('coste') }} en tus modelos 
+--  y funcionará perfecto tanto en tu ordenador local como en la nube sin que tengas 
+--  que cambiar ni una coma.

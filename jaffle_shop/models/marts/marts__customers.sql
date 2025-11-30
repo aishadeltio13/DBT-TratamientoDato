@@ -43,3 +43,7 @@ joined as (
 )
 
 select * from joined
+
+
+-- Crea una "ficha única" por cliente. Une la información personal (nombre) 
+-- con su historial de compras (cuánto ha gastado, cuándo fue su primera compra, etc.).

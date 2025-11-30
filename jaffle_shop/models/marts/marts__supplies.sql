@@ -7,3 +7,5 @@ supplies as (
 )
 
 select * from supplies
+
+-- Gestión de ingredientes.

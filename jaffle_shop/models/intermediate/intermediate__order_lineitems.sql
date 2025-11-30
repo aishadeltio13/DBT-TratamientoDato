@@ -25,12 +25,12 @@ select
     order_lineitems.order_id,
     order_lineitems.product_id,
     products.product_type,
-    sum(case when type_of_movement = 'VENTA' then order_lineitems.quantity else 0 end)       as original_quantity,
-    sum(order_lineitems.quantity)                                                            as final_quantity,
+    sum(case when type_of_movement = 'VENTA' then order_lineitems.quantity else 0 end)       as original_quantity,  -- Venta Bruta (Gross Revenue). Ignora las devoluciones. Es cuánto dinero entró en caja inicialmente.
+    sum(order_lineitems.quantity)                                                            as final_quantity,     
     avg(order_lineitems.unit_price)                                                          as unit_price,
     sum(case when type_of_movement = 'VENTA' then order_lineitems.subtotal_price else 0 end) as original_subtotal_price,
-    sum(order_lineitems.subtotal_price)                                                      as final_subtotal_price,
-    max(type_of_movement == 'DEVOLUCION')                                                    as has_returned_items      
+    sum(order_lineitems.subtotal_price)                                                      as final_subtotal_price,   -- Venta Neta (Net Revenue)
+    max(type_of_movement == 'DEVOLUCION')                                                    as has_returned_items      -- Si alguna de las líneas fue una devolución, el MAX encontrará el TRUE (o el 1)      
 from 
     order_lineitems 
 inner join 
