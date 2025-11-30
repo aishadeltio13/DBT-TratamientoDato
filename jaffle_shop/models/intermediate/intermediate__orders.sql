@@ -84,7 +84,7 @@ final as (
         orders.order_id,
         orders.location_id,
         orders.customer_id,
-        orders.ordered_at as order_date, -- Ojo: verifica si en staging lo llamaste 'ordered_at'
+        orders.order_date, 
         
         -- Traemos las métricas ya calculadas, usando COALESCE por si un pedido no tiene ítems (raro, pero posible)
         coalesce(order_metrics.number_of_products, 0) as number_of_products,
